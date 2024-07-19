@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="drop">
+        <div class="content">
+            <h2>Add New Anime</h2>
+            <form 
+            [formGroup]="animeForm"
+            (ngSubmit)="onSubmit()"
+            >
+                <div class="inputs">
+                    <div class="left">
+                <div class="input-box">
+                    <input 
+                    formControlName="title"
+                    type="text" 
+                    placeholder="Add anime title...">
+                </div>
+                <div 
+                *ngIf="(animeFormControl['title'].touched || submitted)&&
+                animeFormControl['title'].errors?.['required']"
+                class="error">
+                * Title is required.
+                </div>
+                <div class="input-box">
+                    <input 
+                    formControlName="duration"
+                    type="text" 
+                    placeholder="Add number of seasons...">
+                </div>
+                <div 
+                *ngIf="(animeFormControl['duration'].touched || submitted)&&
+                animeFormControl['duration'].errors?.['required']"
+                class="error">
+                * Duration is required.
+                </div>
+                <div
+                *ngIf="animeFormControl['duration'].touched &&
+                      animeFormControl['duration'].errors?.['min']"
+                class="error"
+              >
+                * Duration cannot be less than 0.
+              </div>
+                <div class="select-box">
+                    <label for="genre">Select a Genre</label>
+                    <select formControlName="genre">
+                        <option  disabled selected  class="border-teal-100"></option>
+                        <option 
+                        *ngFor="let genre of genreList"
+                         [value]="genre.genreName">
+                        {{genre.genreName}}
+                    </option>
+                    </select>
+                </div>
+                <div
+                *ngIf="(animeFormControl['genre'].touched || submitted) &&
+                      animeFormControl['genre'].errors?.['required']"
+                          class="error"
+              >
+                * Genre is required.
+              </div>
+                <div class="upload-container">
+                    <label for="image">Upload a poster..</label>
+                    <input 
+                    (change)="uploadPoster($event)"
+                    type="file"
+                    id="fileupload">
+                </div>
+            </div>
+            <div class="right">
+               <div class="image-box">
+                <img src="{{postPreview}}" alt="">
+               
+               </div> 
+            </div>
+            </div>
+                <div class=" editor">
+                    <editor
+                    formControlName="overview"
+                    apiKey="rva0ous3aeydtu7ugh25tjvrphlkc1kx29a6qiix3wzmmm3l"
+                    [init]="{plugins:'list link image table code help wordcount'}"></editor>
+                </div>
+                <div class="input-box">
+                    <button>submit</button>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>

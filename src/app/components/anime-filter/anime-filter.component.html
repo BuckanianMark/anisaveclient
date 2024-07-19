@@ -1,0 +1,17 @@
+
+<ul class="wrapper">
+    <li 
+    *ngFor="let item of genreList$ | async;let i = index" 
+    (click)="filterAnime($event)"
+    class="item "  [ngClass]="'item-' + (i + 1)">
+        {{item?.genreName}}
+    </li>
+</ul>
+<!-- 
+<div class="wrapper" >
+    <ul *ngFor="let genre of genreList | async;  let i = index">
+        <li class="item "  [ngClass]="'item-' + (i + 1)">
+            {{genre}}
+        </li>
+    </ul>
+</div> -->

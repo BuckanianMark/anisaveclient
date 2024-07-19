@@ -1,0 +1,23 @@
+.anime-card{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.anime-card .image-box{
+  width: 250px;
+  object-fit: contain;
+}
+.anime-card h1{
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.anime-card a img{
+    max-width: 100%;
+    border-radius: 15px;
+}

@@ -1,0 +1,8 @@
+<div class="anime-card">
+    <!-- <h1 >{{anime.title}}</h1> -->
+    <div class="image-box">
+        <a [routerLink]="['/animes/details',anime.animeId]" routerLinkActive="router-link-active">
+            <img src="http://localhost:5068/Poster/{{anime.posterPath}}" alt="cover photo" loading="lazy">
+        </a>
+    </div>
+</div>

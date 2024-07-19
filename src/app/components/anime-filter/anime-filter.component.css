@@ -1,0 +1,74 @@
+.wrapper{
+    width: 80%;
+    max-width: 1500px;
+    position: relative;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 15px;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0),
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0)
+    ),;
+}
+@keyframes scrollleft{
+    to{
+        left: -100px;
+    }
+}
+.item{
+    width: 100px;
+    height: 30px;
+    background: #37d4b7;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(100px * 5),100%);
+    animation-name: scrollleft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.item:hover{
+    animation-play-state: paused;
+}
+
+.item-1{
+    animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+.item-2{
+    animation-delay: calc(30s / 5 * (5 - 2) * -1);
+
+}
+.item-3{
+    animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+.item-4{
+    animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+.item-5{
+    animation-delay: calc(30s / 5 * (5 - 5) * -1);
+}
+.item-6{
+    animation-delay: calc(30s / 5 * (5 - 6) * -1);
+}
+.item-7{
+    animation-delay: calc(30s / 5 * (5 - 7) * -1);
+}
+.item-8{
+    animation-delay: calc(30s / 5 * (5 - 8) * -1);
+}
+.item-9{
+    animation-delay: calc(30s / 5 * (5 - 9) * -1);
+}
+.item-10{
+    animation-delay: calc(30s / 5 * (5 - 10) * -1);
+}

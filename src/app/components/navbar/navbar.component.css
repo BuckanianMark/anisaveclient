@@ -1,0 +1,41 @@
+.nav-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+    25px 35px 20px rgba(0, 0, 0, 0.05),
+    25px 30px 30px rgba(0, 0, 0, 0.05),
+    inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+}
+.nav-container .logos{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.nav-container .logos .image{
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: contain;
+    overflow: hidden;
+}
+.nav-container .logos .image img{
+    padding: 1px;
+}
+.nav-container .left{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 5px;
+   background:#ff0f5b ;
+   padding: 5px 10px;
+   border-radius: 4px;
+}
+.nav-container .left p{
+    font-weight: 700;
+    letter-spacing: 1px;
+}

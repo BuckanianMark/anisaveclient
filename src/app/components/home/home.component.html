@@ -1,0 +1,49 @@
+<ng-container *ngIf="vm$ | async as vm; else loading">
+   <div>
+    <div class="filter-container">
+        <app-anime-filter></app-anime-filter>
+    </div>
+    <div>
+        <ng-container class="anime-container" *ngIf="vm.animeList;else nodata">
+        
+            <ul class="anime-container">
+                <li *ngFor="let anime of vm.animeList">
+                    <app-anime-card [anime]="anime"></app-anime-card>
+                </li>
+            </ul>
+        </ng-container>
+    </div>
+   </div>
+</ng-container>
+
+<ng-template #loading>
+    <h1>Loading...</h1>
+    <!-- <ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    color="#fff"
+    size="medium"
+    type="ball-triangle-path"
+    [fullScreen]="true"
+    >
+
+    </ngx-spinner> -->
+</ng-template>
+
+<ng-template #nodata>
+    <div class="nodata">
+        <h2>Oops,No Animes Found</h2>
+    </div>
+</ng-template>
+<!-- <p>
+    Seinen
+    Josei
+    Shoujo
+    Shounen
+    Comedy
+    Action
+    Romance
+    Magic
+    Fantasy
+    Slice Of Life
+
+</p> -->
