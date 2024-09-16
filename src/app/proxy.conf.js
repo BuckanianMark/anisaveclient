@@ -38,7 +38,7 @@ const PROXY_CONF = [
       "/graphql",
        "/Poster",
     ],
-    target:"http://localhost:5068",
+    target:"https://aniserver.com",
     secure:false,
     changeOrigin:true,
     logLevel:"debug",
