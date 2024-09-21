@@ -5,7 +5,7 @@ import { ApolloClientOptions, ApolloLink, InMemoryCache } from '@apollo/client/c
 import { setContext } from '@apollo/client/link/context';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-const uri = 'http://localhost:5068/graphql/'; 
+const uri = 'https://aniserverwebapiwithcontainer-ajctfngxaeeeerh5.australiacentral-01.azurewebsites.net/graphql/'; 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   const auth = setContext(() => {
     const headerToken = localStorage.getItem('auth-token-animeapp')

@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
         mirror: false,
       });
     } catch (error) {
-      console.error('Failed to initialize AOS:', error);
+      console.error('Failed to initialize AOS:', error); 
     }
   }
 }
