@@ -37,9 +37,9 @@
     font-weight: 700;
     text-transform: capitalize;
 }
-.item:hover{
+/* .item:hover{
     animation-play-state: paused;
-}
+} */
 
 .item-1{
     animation-delay: calc(30s / 5 * (5 - 1) * -1);

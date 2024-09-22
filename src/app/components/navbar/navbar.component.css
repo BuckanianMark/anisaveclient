@@ -72,8 +72,8 @@
         display: none;
      }
 }
-/* @media (max-width:550px){
-    .nav-container .logos .image{
-       display: none;
+@media (max-width:550px){  
+    .collection{
+        display: none;
     }
-} */
+}

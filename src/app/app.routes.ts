@@ -1,11 +1,17 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AddAnimeComponent } from './components/add-anime/add-anime.component';
-import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
+import { AnimeDetailsComponent } from './pages/anime-details/anime-details.component';
+import { SplashComponent } from './pages/splash/splash.component';
 
 export const routes: Routes = [
     {
         path:'',
+        component:SplashComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'home',
         component:HomeComponent,
         pathMatch:'full'
     },

@@ -1,0 +1,150 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo{
+   margin-top: 20px;
+  
+}
+.logo img{
+    width: 300px;
+}
+.characters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.characters .top,.bottom{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+@keyframes topleft{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: -50px;
+        top: -50px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+@keyframes topright{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: 50px;
+        top: -50px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+@keyframes bottomleft{
+    0%{
+        left: 0px;
+        bottom: 0px;
+    }
+    50%{
+        left: -50px;
+        bottom: -50px;
+    }
+    100%{
+        left: 0px;
+        bottom: 0px;
+    }
+}
+@keyframes bottomright{
+    0%{
+        left: 0px;
+        bottom: 0px;
+    }
+    50%{
+        left: 50px;
+        bottom: -50px;
+    }
+    100%{
+        left: 0px;
+        bottom: 0px;
+    }
+}
+.imgone{
+    position: absolute;
+    position: relative;
+    animation-name: topleft;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+.imgtwo{
+    position: absolute;
+    position: relative;
+    animation-name: topright;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s; 
+}
+.imgthree{
+    position: absolute;
+    position: relative;
+    animation-name: bottomleft;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+.imgfour{
+    position: absolute;
+    position: relative;
+    animation-name: bottomright;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s; 
+}
+.venture{
+    border: none;
+    padding: 10px 5px;
+    position: relative;
+    background: #ff0f5b;
+    cursor: pointer;
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.2),
+    15px 15px 10px rgba(0, 0, 0, 0.05),
+    15px 10px 15px rgba(0, 0, 0, 0.025);
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+.venture::before{
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5%;
+    width: 65%;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+}
