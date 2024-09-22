@@ -1,7 +1,7 @@
 <ng-container *ngIf="animeDetails$ | async as anime;else noAnimeFound" class="container">
     
     <div class="wrapper">
-        <button routerLink="/" class="back">back</button>
+        <button routerLink="/home" class="back">back</button>
         <h2>{{anime.title}}</h2>
         <div class="section">
             <div class="left">
