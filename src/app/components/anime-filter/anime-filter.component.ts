@@ -33,11 +33,12 @@ export class AnimeFilterComponent {
     tooltip: 'genreName',
   }
   filterAnime(event:any){
+    console.log(event.target.innerText.toLocaleLowerCase())
     const selectedGenre = event.target.innerText.toLocaleLowerCase();
     if(selectedGenre === this.defaultGenre.toLocaleLowerCase()){
-      this.router.navigate(['/'])
+      this.router.navigate(['/home'])
     }else{
-      this.router.navigate(['/filter'],{
+      this.router.navigate(['/home'],{
         queryParams:{genre:selectedGenre},
         queryParamsHandling:'merge'
       })

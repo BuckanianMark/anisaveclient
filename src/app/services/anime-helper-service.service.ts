@@ -6,10 +6,10 @@ import { map, shareReplay } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimeHelperServiceService {
-
-  constructor(private readonly fetchGenre:FetchGenreService) { }
   genreList$ = this.fetchGenre.watch().valueChanges.pipe(
     map((res) => res.data),
     shareReplay(1)
   )
+  constructor(private readonly fetchGenre:FetchGenreService) { }
+
 }

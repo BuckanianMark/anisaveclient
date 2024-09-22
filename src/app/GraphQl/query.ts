@@ -13,6 +13,7 @@ query FetchAnimeList{
     animeList{
         animeId
         title
+        genre
         posterPath
         duration
         overview
@@ -25,6 +26,7 @@ query FetchAnimeList($filterInput:Int!){
     animeList(where: {animeId:{eq:$filterInput}}){
         animeId
         title
+        genre
         posterPath
         duration
         overview

@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
 
 
   genreList:Observable<GenreType>
-  activatedRote = inject(ActivatedRoute)
+  activatedRoute = inject(ActivatedRoute)
   fetchAnimeService = inject(FetchAnimeListService)
   fetchGenres = inject(AnimeHelperServiceService)
   constructor(){
@@ -35,25 +35,23 @@ export class HomeComponent implements OnInit{
   
   }
   ngOnInit(): void {
-  this.anime$.subscribe((data) => {
-  console.log(data)
-
-})
+    console.log(this.vm$.subscribe(data => console.log(data)))
   }
   private readonly anime$ = this.fetchAnimeService.watch({
     fetchPolicy:'network-only'
   }).valueChanges.pipe(map((res) => res.data )) 
   
 
-  vm$ = this.activatedRote.queryParams.pipe(
+  vm$ = this.activatedRoute.queryParams.pipe(
     combineLatestWith(this.anime$),
     map(([params,animes]) => {
       let homeVm = new Vm();
 
       homeVm.selectedGenre = params['genre'];
+      console.log(homeVm.selectedGenre);
       if(homeVm.selectedGenre){
         const filterByGenre = animes?.animeList.filter(
-          (anime) => anime.genre.toLocaleLowerCase() === homeVm.selectedGenre
+          (anime) => anime.genre?.toLocaleLowerCase() === homeVm.selectedGenre
         )
         homeVm.animeList = filterByGenre;
       }else{

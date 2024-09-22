@@ -31,15 +31,16 @@
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     text-transform: capitalize;
 }
-/* .item:hover{
+.wrapper:hover .item{
     animation-play-state: paused;
-} */
+}
 
 .item-1{
     animation-delay: calc(30s / 5 * (5 - 1) * -1);

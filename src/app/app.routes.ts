@@ -16,6 +16,10 @@ export const routes: Routes = [
         pathMatch:'full'
     },
     {
+        path:'home/filter',
+        component:HomeComponent,
+    },
+    {
         path:'add-anime',
         component:AddAnimeComponent,
         pathMatch:'full'
