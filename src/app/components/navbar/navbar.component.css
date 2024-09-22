@@ -39,3 +39,24 @@
     font-weight: 700;
     letter-spacing: 1px;
 }
+.mainLogo{
+    display: flex;
+}
+@media (max-width:900px){
+    .mainLogo{
+        display: none;
+    }
+}
+@media (max-width:800px){
+    .mainLogo{
+        display: flex;
+    }
+    .nav-container .logos .image{
+        display: none;
+     }
+}
+/* @media (max-width:550px){
+    .nav-container .logos .image{
+       display: none;
+    }
+} */

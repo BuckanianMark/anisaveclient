@@ -21,3 +21,9 @@ a{
     max-width: 100%;
     border-radius: 15px;
 }
+@media (max-width:600px){
+    .anime-card .image-box{
+        width: 100px;
+        object-fit: contain;
+      }
+}
