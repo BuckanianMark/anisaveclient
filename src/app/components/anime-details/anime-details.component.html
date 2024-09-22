@@ -5,7 +5,7 @@
         <h2>{{anime.title}}</h2>
         <div class="section">
             <div class="left">
-                <img  src="http://localhost:5068/Poster/{{anime.posterPath}}" alt="img">
+                <img  src="https://aniserverwebapiwithcontainer-ajctfngxaeeeerh5.australiacentral-01.azurewebsites.net/Poster/{{anime.posterPath}}" alt="img">
             </div>
             <div class="right">
                 <h1>Characters</h1>
@@ -13,7 +13,7 @@
                 <div class="characters-container">
                         <ul>
                             <li *ngFor="let character of anime.characters">
-                                <img src="http://localhost:5068/Poster/{{character.characterPosterPath}}" width="50" alt="">
+                                <img src="https://aniserverwebapiwithcontainer-ajctfngxaeeeerh5.australiacentral-01.azurewebsites.net/Poster/{{character.characterPosterPath}}" width="50" alt="">
                                 <p>{{character.characterName}}</p>
                             </li>
                         </ul>
@@ -34,10 +34,10 @@
     </div>
 </ng-container>
 
-<div *ngIf="showCharacter">
+<!-- <div *ngIf="showCharacter">
     <i class="fa fa-times fa-3x"></i>
     <img src="" alt="">
-</div>
+</div> -->
 
 <div *ngIf="showCharacterForm" class="add-character-container">
     <i class="fa fa-times fa-3x" (click)="toggleAddCharacterForm()"></i>
@@ -70,11 +70,12 @@
 </div>
 </div>
 
-<ng-template #noAnimeFound>
-    <div class=" flex flex-col items-center mt-4">
-        <div>
-            <h1>No Anime Found</h1>
-        </div>
+<ng-template #noAnimeFound class="loading">
+    <div class="loading-wrapper" >
+        <!-- <div>
+            <h1>Loading anime.....</h1>
+        </div> -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="#FF0F5B" stroke="#FF0F5B" stroke-width="4" stroke-linejoin="round" width="20" height="20" x="85" y="85" rx="0" ry="0"><animate attributeName="rx" calcMode="spline" dur="2" values="15;15;5;15;15" keySplines=".5 0 .5 1;.8 0 1 .2;0 .8 .2 1;.5 0 .5 1" repeatCount="indefinite"></animate><animate attributeName="ry" calcMode="spline" dur="2" values="15;15;10;15;15" keySplines=".5 0 .5 1;.8 0 1 .2;0 .8 .2 1;.5 0 .5 1" repeatCount="indefinite"></animate><animate attributeName="height" calcMode="spline" dur="2" values="30;30;1;30;30" keySplines=".5 0 .5 1;.8 0 1 .2;0 .8 .2 1;.5 0 .5 1" repeatCount="indefinite"></animate><animate attributeName="y" calcMode="spline" dur="2" values="40;170;40;" keySplines=".6 0 1 .4;0 .8 .2 1" repeatCount="indefinite"></animate></rect></svg>
     </div>
-    <button routerLink="/">Back To Home</button>
+    <!-- <button routerLink="/">Back To Home</button> -->
 </ng-template>

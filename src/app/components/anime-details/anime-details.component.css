@@ -13,6 +13,18 @@
 .wrapper h2{
     border-bottom: 2px solid black;
 }
+.loading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center; 
+}
 .back{
     position: absolute;
     top: 0;
@@ -97,17 +109,21 @@
     font-size: 15px;
 }
 .info .save{
-   
+    cursor: pointer;
     border: 2px solid #ff0f5b;
     background:#ffbad0;
     padding: 10px 15px;
     border-radius: 5px;
     color: #ff0f5b;
 }
+.info .save:hover{
+    border: 2px solid #ffbad0; 
+    box-shadow: 0 10px 15px 0px #ffbad0;
+}
 .add-character-container{
-    position: absolute;
-    width: 100%;
-    height: 120%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     bottom: 0;
     /* margin-top: 50%;
@@ -203,6 +219,7 @@
     padding: 10px 5px;
     position: relative;
     background: #ff0f5b;
+    cursor: pointer;
     width: 120px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -211,7 +228,7 @@
     15px 10px 15px rgba(0, 0, 0, 0.025);
     color: #fff;
     text-transform: uppercase;
-    cursor: pointer;
+    
     border-radius: 25px;
     width: 120px;
 }
@@ -225,4 +242,10 @@
     width: 65%;
     background: rgba(255, 255, 255, 1);
     border-radius: 5px;
+}
+@media (max-width:800px){
+    .wrapper .section{
+       flex-direction: column;
+       align-items: center;
+    }
 }
