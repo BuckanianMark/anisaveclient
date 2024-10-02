@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { AddAnimeComponent } from './components/add-anime/add-anime.component';
+import { AddAnimeComponent } from './pages/add-anime/add-anime.component';
 import { AnimeDetailsComponent } from './pages/anime-details/anime-details.component';
 import { SplashComponent } from './pages/splash/splash.component';
 

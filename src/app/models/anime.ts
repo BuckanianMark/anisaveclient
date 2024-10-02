@@ -2,6 +2,7 @@ export interface Anime {
     animeId: number;
     title: string;
     overview: string;
+    previewUrl: string;
     genre: string;
     duration: number;
     posterPath: string;
@@ -14,6 +15,7 @@ export interface Anime {
     animeId: number;
     title: string;
     overview: string;
+    previewUrl: string;
     genre: string;
     duration: number;
     posterPath: string;

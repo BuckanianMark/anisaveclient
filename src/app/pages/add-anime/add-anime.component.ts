@@ -79,6 +79,7 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
     animeId:this.animeForm.controls['animeId'].value,
     title:this.animeForm.controls['title'].value,
     genre:this.animeForm.controls['genre'].value,
+    previewUrl:this.animeForm.controls['previewurl'].value,
     overview:this.animeForm.controls['overview'].value,
     duration:Number(this.animeForm.controls['duration'].value),
     posterPath:this.posterFile
@@ -91,7 +92,7 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
         this.toastr.info('Anime Added Successfully')
         // this.toastr.success("Added")
         //console.log("Added")
-        this.router.navigate(['/'])
+        this.router.navigate(['/home'])
       },error:(err) => {
         this.toastr.show('An error occured while adding anime')
         console.log('An error occured',err)
@@ -104,6 +105,7 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
     animeId:0,
     title:this.fb.control('',Validators.required),
     genre:this.fb.control('',Validators.required),
+    previewurl:this.fb.control('',Validators.required),
     overview:this.fb.control('',[
       Validators.required,
       Validators.maxLength(1000),

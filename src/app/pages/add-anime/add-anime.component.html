@@ -32,6 +32,7 @@
                 class="error">
                 * Duration is required.
                 </div>
+                
                 <div
                 *ngIf="animeFormControl['duration'].touched &&
                       animeFormControl['duration'].errors?.['min']"
@@ -39,6 +40,18 @@
               >
                 * Duration cannot be less than 0.
               </div>
+              <div class="input-box">
+                <input 
+                formControlName="previewurl"
+                type="text" 
+                placeholder="Add preview url...">
+            </div>
+            <div 
+            *ngIf="(animeFormControl['previewurl'].touched || submitted)&&
+            animeFormControl['previewurl'].errors?.['required']"
+            class="error">
+            * Preview url is required.
+            </div>
                 <div class="select-box">
                     <label for="genre">Select a Genre</label>
                     <select formControlName="genre">
