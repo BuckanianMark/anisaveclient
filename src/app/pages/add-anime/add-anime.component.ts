@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {EditorModule} from '@tinymce/tinymce-angular';
+import {EditorModule,EditorComponent} from '@tinymce/tinymce-angular';
 import { AnimeHelperServiceService } from '../../services/anime-helper-service.service';
 import { AddAnimeService } from '../../services/add-anime.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,6 +17,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './add-anime.component.css'
 })
 export class AddAnimeComponent implements OnDestroy,OnInit {
+  init: EditorComponent['init'] = {
+    plugins: 'lists link image table code help wordcount'
+  };
   protected animeForm!:FormGroup;
   protected submitted = false;
   genreList:any;
