@@ -41,8 +41,15 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
   })
 
  }
+ public editorConfig = {
+  plugins: 'lists link image table code help wordcount',
+  toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat',
+  menubar: false
+};
+
   ngOnInit(): void {
     this.initializeForm()
+  
   }
  
  protected get animeFormControl(){
