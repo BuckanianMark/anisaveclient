@@ -1,7 +1,7 @@
 <div class="nav-container">
    <div class="logos">
       <div 
-      class="mainLogo" >
+      class="mainLogo" routerLink="/home" >
          <img src="anisavelogo.jpg" />
       </div>
       <div class="image">
@@ -20,7 +20,7 @@
        <img src="tanjiro.png" alt=""  width="100" loading="lazy">
       </div>
    </div>
-   <div class="login">
+   <div class="login" [routerLink]="'/login'" >
       login
    </div>
    <div class="left">

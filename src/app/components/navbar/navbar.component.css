@@ -32,6 +32,7 @@
     position: relative;
     color: #222;
     text-transform: capitalize;
+    cursor: pointer;
 }
 .login::before{
     content: '';
