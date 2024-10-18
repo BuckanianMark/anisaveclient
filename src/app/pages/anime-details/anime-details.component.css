@@ -248,6 +248,12 @@
        flex-direction: column;
        align-items: center;
     }
+    .wrapper .section .left{
+        width: 80%;
+    }
+    .wrapper  .section .left img{
+        width: 250px;
+    }
     .wrapper .section .right{
         width: 80%;
     }
