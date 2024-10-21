@@ -22,7 +22,7 @@ export const ADD_CHARACTER = gql`
 }
 `
 export const REGISTER_USER = gql`
-   mutation Register($registerRequestDto:UserRegistrationInput!){
+   mutation RegisterUser($registerRequestDto:RegisterRequestDtoInput!){
     registerUser(registerRequestDto:$registerRequestDto){
         isRegistrationSuccess
     }

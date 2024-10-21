@@ -4,7 +4,7 @@
 <div class="wrapper">
     <form [formGroup]="userRegistrationForm" (ngSubmit)="registerUser()">
     <div class="field-div">
-        <label for="">Username </label>
+        <label for="">Username(unique) </label>
         <input type="text" formControlName="userName">
     </div>
     <div class="field-div">
@@ -17,10 +17,11 @@
     </div>
     <div class="field-div">
         <label for="">Password </label>
-        <input type="text"    formControlName="password">
+        <input type="password"  formControlName="password">
     </div>
-</form>
     <button class="submit-btn" type="submit">Submit</button>
+</form>
+   
     <p class="redirect">Already have an account? <a class="link" [routerLink]="'/login'">Login</a></p>
 </div>
 </div>

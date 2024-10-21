@@ -49,9 +49,13 @@ export class RegisterComponent {
       .pipe(takeUntil(this.destroyed$))
       .subscribe({
         next:(res) => {
-          if(res.data?.userRegistration.isRegistrationSuccess){
+          console.log(res)
+          if(res.data?.registerUser.IsRegistrationSuccess){
             this.toastr.success("User Registered Successfully!!")
             this.router.navigate(['/login'])
+          }
+          else{
+            this.toastr.error("Choose a unique username")
           }
         }
       })

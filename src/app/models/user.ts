@@ -12,3 +12,10 @@ export interface userRegistration{
     username: string;
     password: string;
 }
+export interface RegistrationResponse {
+    IsRegistrationSuccess: boolean;
+    errorMessage: string;
+  }
+export type RegistrationType = {
+    registerUser: RegistrationResponse;
+};
