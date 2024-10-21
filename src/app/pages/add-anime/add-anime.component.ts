@@ -8,6 +8,7 @@ import { Anime } from '../../models/anime';
 import { ReplaySubject, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-add-anime',
@@ -24,6 +25,8 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
   protected submitted = false;
   genreList:any;
   animeId:any;
+  selectedImg:any;
+  imgSrc:any;
   posterFile = '';
   postPreview!:ArrayBuffer |string |null;
   animePosterPreview = '';
@@ -36,7 +39,8 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
   private readonly addAnimeService:AddAnimeService,
   private readonly router:Router,
   private readonly activatedRoute:ActivatedRoute,
-  private readonly toastr:ToastrService
+  private readonly toastr:ToastrService,
+  private readonly fbservice:FirebaseService
  ){
   this.animeHelperService.genreList$.subscribe((data) => {
     this.genreList = data.genreList;
@@ -44,6 +48,14 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
   })
 
  }
+ async ShowPreviewImage($event:any){
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    this.imgSrc = e.target?.result
+  }
+  reader.readAsDataURL($event.target.files[0])
+  this.selectedImg = $event.target.files[0]
+}
  public editorConfig = {
   plugins: 'lists link image table code help wordcount',
   toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat',
@@ -69,22 +81,26 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
   }
   this.addMovie();
  }
- public uploadPoster(args:any){
-  if(args && args.target.files){
-    const reader = new FileReader();
-    reader.readAsDataURL(args.target.files[0]);
-    reader.onloadend = (myevent) => {
-      if(myevent.target?.result != null)
-        {
-          this.postPreview = myevent.target.result;
-          this.posterFile = (this.postPreview as string).split(',')[1];
-          // console.log(this.postPreview)
-        }
-    }
-  }
- }
+//  public uploadPoster(args:any){
+//   if(args && args.target.files){
+//     const reader = new FileReader();
+//     reader.readAsDataURL(args.target.files[0]);
+//     reader.onloadend = (myevent) => {
+//       if(myevent.target?.result != null)
+//         {
+//           this.postPreview = myevent.target.result;
+//           this.posterFile = (this.postPreview as string).split(',')[1];
+//           // console.log(this.postPreview)
+//         }
+//     }
+//   }
+//  }
 
- private addMovie(){
+
+ private async addMovie(){
+  if(this.selectedImg){
+    this.posterFile =await this.fbservice.uploadImage(this.selectedImg)
+  }
   const animeData:Anime = {
     animeId:this.animeForm.controls['animeId'].value,
     title:this.animeForm.controls['title'].value,
@@ -100,8 +116,6 @@ export class AddAnimeComponent implements OnDestroy,OnInit {
     .subscribe({
       next:() => {
         this.toastr.info('Anime Added Successfully')
-        // this.toastr.success("Added")
-        //console.log("Added")
         this.router.navigate(['/home'])
       },error:(err) => {
         this.toastr.show('An error occured while adding anime')

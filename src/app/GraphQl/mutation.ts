@@ -21,3 +21,10 @@ export const ADD_CHARACTER = gql`
     }
 }
 `
+export const REGISTER_USER = gql`
+   mutation Register($registerRequestDto:UserRegistrationInput!){
+    registerUser(registerRequestDto:$registerRequestDto){
+        isRegistrationSuccess
+    }
+   }
+`

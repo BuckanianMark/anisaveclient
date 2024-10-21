@@ -73,14 +73,15 @@
                 <div class="upload-container">
                     <label for="image">Upload a poster..</label>
                     <input 
-                    (change)="uploadPoster($event)"
+                    accept="Image/*"
+                    (change)="ShowPreviewImage($event)"
                     type="file"
                     id="fileupload">
                 </div>
             </div>
             <div class="right">
                <div class="image-box">
-                <img src="{{postPreview}}" alt="">
+                <img src="{{imgSrc}}" alt="">
                
                </div> 
             </div>

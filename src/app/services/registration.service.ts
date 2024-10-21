@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Mutation } from 'apollo-angular';
+import { REGISTER_USER } from '../GraphQl/mutation';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegistrationService {
+export class RegistrationService extends Mutation{
 
-  constructor() { }
+  override document = REGISTER_USER
 }
